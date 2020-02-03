@@ -4,33 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Rambla&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Goksen-About me</title>
 </head>
 <body>
-    <div class="intro">
-    <h3>Hi there! I'm Goksen and I’m glad that you are here!
-    </h3>
+    <div class="about-me">
+    <div class="container">
+    <h2>Hi there! I'm Goksen and I’m glad that you are here!
+    </h2>
     <img src="src/images/Goksen photo.jpg" alt="a girl smiling"/>
-</div>
-<p>I was dreaming about being a professional bellydancer when I was a kid, I studied Political Science in college, I failed a start-up last year and now I’m a web developer in training. You know.. life is full of suprises 🤷🏻‍♀️
-<p>You can check my latest projects from <a href="https://github.com/GoksenCodes"> here</a>.</p>
+    <div class="intro">
+<p>I was dreaming about being a professional bellydancer when I was a kid, I've studied Political Science in college and worked as project manager in last 8 years. Oh and I've failed a start-up last year 🤷🏻‍♀️ <br>Now I’m a web developer in making 👩🏻‍🔬 </br>
+<p>You can check my latest projects from <a href="https://github.com/GoksenCodes" target="_blank"> here</a>.</p>
         </p>
-<div class="second-part">
-    <ul>Latest working exprience
-        <li>Digital Project Manager @ <a href="https://www.emakina.nl"> Emakina the User Agency </a> , <i>2019</i> </li>
-        <li>Co-founder @ <a href="https://www.linkedin.com/company/10141229/">Expat Landing Pad</a> , <i> 2018</i></li>
-        <li>Manager @ <a href= "https://home.kpmg/tr/en/home/services/advisory.html">KPMG/Advisory Services</a> , <i>2015-2017</i></li>
+    </div>
+<div class="second-part row" >
+    <div class="col">
+    <h5>Latest working exprience</h5>
+    <ul>
+        <li>Digital Project Manager @ <a href="https://www.emakina.nl" target="_blank"> Emakina, the User Agency </a> , <i>2019</i> </li>
+        <li>Co-founder @ <a href="https://www.linkedin.com/company/10141229/" target="_blank">Expat Landing Pad</a> , <i> 2018</i></li>
+        <li>Manager @ <a href= "https://home.kpmg/tr/en/home/services/advisory.html" target="_blank">KPMG/Advisory Services</a> , <i>2015-2017</i></li>
     </ul>
-    <ul>Interests
+    </div>
+    <div class="col">
+    <h5>Interests</h5>
+    <ul>
         <li>User tests & product strategy</li>
         <li>International politics</li>
         <li>Nature walking & hiking</li>
         <li>Bellydancing?? No no I've quit when I was 12 :)</li>
     </ul>
+    </div>
 </div>
 <div>
-<button>Wanna see a small show?</button>
-<p>It is 10 °C in Amsterdam 😉</p>
+        <button type="button" class="btn btn-light" id="show">Wanna see a small show?</button>
+<p id="temp"></p> <p id = "city"> </p> 
+
 </div>
+</div>
+</div>
+<script src='src/app.js'></script>
 </body>
 </html>

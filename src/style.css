@@ -1,13 +1,14 @@
 
 
 img {
-    width: 200px;
+    width: 300px;
     display: inline-block;
     padding: 3px;
     background: #ebd5d5 ;
     border: 1px solid  #ea8a8a ;
     border-radius: 50%;
     margin: 40px 0 ;
+    margin-left: 10px;
 }
 
 ul {
@@ -18,7 +19,7 @@ ul {
 .about-me {
     max-width: 1000px;
     margin: 50px auto;
-    text-align: center;
+    text-align: left;
     border: 1px solid #dadde1 ;
     padding: 16px ;
     margin: 10px auto;
@@ -28,9 +29,16 @@ ul {
     font-family: 'Rambla', sans-serif;
 }
 
-h2 {
+h3 {
     color: #ea8a8a ;
+    margin-bottom: 40px ;
+    margin-top: 20px ;
+
  
+}
+
+h5 {
+    margin-left :40px;
 }
 
 .col {
@@ -43,6 +51,13 @@ h5 {
 
 .btn {
     color: #ea8a8a;
+    display: block;
+    margin: 0 auto;
+}
+
+.intro {
+    margin: 50px 20px;
+    margin-left: 40px ;
 }
 
  

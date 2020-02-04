@@ -23,7 +23,7 @@ var settings = {
 	"url": "https://ronreiter-meme-generator.p.rapidapi.com/meme?font=Impact&font_size=50&meme=Frowning-Nun&top=you&bottom=Bottom%20text",
     "method": "GET",
 	"headers": {
-		"x-rapidapi-host": "ronreiter-meme-generator.p.rapidapi.com",
+		"x-rapidapi-host": "//ronreiter-meme-generator.p.rapidapi.com",
         "x-rapidapi-key": "21f018dfadmsh8349df3502dc2c3p12164djsn3a44e957406d",
     } 
    

@@ -1,40 +1,28 @@
-// function displayMeme(response) {
-//     let meme = document.querySelector("img") ;
-//     meme.innerHTML = response ; }
 
-// function getMeme(response) {
+function displayMeme(response) {
+let el = document.querySelector(".container");
+// <a href="/javascript/manipulation/creating-a-dom-element-51/">create a new element</a> that will take the place of "el"
+let newEl = document.createElement('div');
+newEl.innerHTML = `<img src="@string.Format(data:image/jpeg;charset=utf-8;base64,${response.data})"/>`;
+// replace el with newEL
+el.parentNode.replaceChild(newEl, el);
+}
 
+function getMeme() {
 const RAPIDAPI_API_URL = "https://ronreiter-meme-generator.p.rapidapi.com/meme?font=Impact&font_size=50&meme=Frowning-Nun&top=You're%20a%20pervert&bottom=aren't%20you%253F"
 const RAPIDAPI_REQUEST_HEADERS = {
-    "x-rapidapi-host": "//ronreiter-meme-generator.p.rapidapi.com",
+    "x-rapidapi-host": "ronreiter-meme-generator.p.rapidapi.com",
     "x-rapidapi-key": "21f018dfadmsh8349df3502dc2c3p12164djsn3a44e957406d" ,
     "Content-Type": "application/json" ,
 } ;
-axios.get(`${RAPIDAPI_API_URL}`, { headers: RAPIDAPI_REQUEST_HEADERS})
-    .then(ac => {
-        console.log(response);
-    })
+axios.get(RAPIDAPI_API_URL, { headers: RAPIDAPI_REQUEST_HEADERS})
+    .then(displayMeme)
+
+}
 
 
-
-// var settings = {
-// 	"async": true,
-// 	"crossDomain": true,
-// 	"url": "https://ronreiter-meme-generator.p.rapidapi.com/meme?font=Impact&font_size=50&meme=Condescending-Wonka&top=Youreapervert&bottom=arentyou" ,
-//     "method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "ronreiter-meme-generator.p.rapidapi.com",
-//         "x-rapidapi-key": "21f018dfadmsh8349df3502dc2c3p12164djsn3a44e957406d",
-//     } 
-   
-// }
-// axios.get(settings).then(response => {
-//             console.log(response);
-// })
-
-
-// let button = document.querySelector("#show");
-// button.addEventListener("click", getMeme);
+let button = document.querySelector("#show");
+button.addEventListener("click", getMeme);
 
 
 
@@ -61,4 +49,3 @@ axios.get(`${RAPIDAPI_API_URL}`, { headers: RAPIDAPI_REQUEST_HEADERS})
 //     event.preventDefault();
 //     navigator.geolocation.getCurrentPosition(getPosition);
 // }
-

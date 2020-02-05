@@ -3,7 +3,7 @@ function displayMeme(response) {
 let el = document.querySelector(".container");
 // <a href="/javascript/manipulation/creating-a-dom-element-51/">create a new element</a> that will take the place of "el"
 let newEl = document.createElement('div');
-newEl.innerHTML = `<img src="@string.Format(data:image/jpeg;charset=utf-8;base64,${response.data})"/>`;
+newEl.innerHTML = `<img src="data:${response.headers['content-type']};base64,${btoa(String.fromCharCode(...new Uint8Array(response.data)))}" />`;
 // replace el with newEL
 el.parentNode.replaceChild(newEl, el);
 }
@@ -15,7 +15,9 @@ const RAPIDAPI_REQUEST_HEADERS = {
     "x-rapidapi-key": "21f018dfadmsh8349df3502dc2c3p12164djsn3a44e957406d" ,
     "Content-Type": "application/json" ,
 } ;
-axios.get(RAPIDAPI_API_URL, { headers: RAPIDAPI_REQUEST_HEADERS})
+axios.get(RAPIDAPI_API_URL, { 
+    responseType: 'arraybuffer',
+    headers: RAPIDAPI_REQUEST_HEADERS})
     .then(displayMeme)
 
 }

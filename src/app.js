@@ -8,8 +8,8 @@ newEl.innerHTML = `<img src="data:${response.headers['content-type']};base64,${b
 el.parentNode.replaceChild(newEl, el);
 }
 
-function getMeme() {
-const RAPIDAPI_API_URL = "https://ronreiter-meme-generator.p.rapidapi.com/meme?font=Impact&font_size=50&meme=Frowning-Nun&top=You're%20a%20pervert&bottom=aren't%20you%253F"
+function getMeme(name) {
+const RAPIDAPI_API_URL = `https://ronreiter-meme-generator.p.rapidapi.com/meme?font=Impact&font_size=40&meme=Frowning-Nun&top=hey%20${name}&bottom=you%20shouldn't%20talk%20to%20strangers%20`
 const RAPIDAPI_REQUEST_HEADERS = {
     "x-rapidapi-host": "ronreiter-meme-generator.p.rapidapi.com",
     "x-rapidapi-key": "21f018dfadmsh8349df3502dc2c3p12164djsn3a44e957406d" ,
@@ -22,9 +22,21 @@ axios.get(RAPIDAPI_API_URL, {
 
 }
 
+function Contact() {
+    let name = prompt ("Name pls? We'll have some fun :)") ;
+
+    if (name && name.length>1 ) {
+        getMeme(name)
+    }
+
+    else {
+        alert( "Oh, if you don't have a name, you can't display the funny meme!" )
+    }
+}
+
 
 let button = document.querySelector("#show");
-button.addEventListener("click", getMeme);
+button.addEventListener("click", Contact);
 
 
 

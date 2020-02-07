@@ -22,6 +22,27 @@ axios.get(RAPIDAPI_API_URL, {
 
 }
 
+function displayNoname(response) {
+    let el = document.querySelector(".container");
+    let newEl = document.createElement('div');
+    newEl.innerHTML = `<img src="data:${response.headers['content-type']};base64,${btoa(String.fromCharCode(...new Uint8Array(response.data)))}" />`;
+    el.parentNode.replaceChild(newEl, el);
+}
+
+function getNoname () {
+    const RAPIDAPI_API_URL = "https://ronreiter-meme-generator.p.rapidapi.com/meme?font=Impact&font_size=30&meme=Confused-Gandalf&top=WTF&bottom=You%20don't%20have%20a%20name"
+    const RAPIDAPI_REQUEST_HEADERS = {
+    "x-rapidapi-host": "ronreiter-meme-generator.p.rapidapi.com",
+    "x-rapidapi-key": "21f018dfadmsh8349df3502dc2c3p12164djsn3a44e957406d" ,
+    "Content-Type": "application/json" ,
+} ;
+axios.get(RAPIDAPI_API_URL, { 
+    responseType: 'arraybuffer',
+    headers: RAPIDAPI_REQUEST_HEADERS})
+    .then(displayNoname)
+
+}
+
 function Contact() {
     let name = prompt ("Name pls? We'll have some fun :)") ;
 
@@ -30,7 +51,7 @@ function Contact() {
     }
 
     else {
-        alert( "Oh, if you don't have a name, you can't display the funny meme!" )
+        getNoname()
     }
 }
 

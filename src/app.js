@@ -9,7 +9,7 @@ el.parentNode.replaceChild(newEl, el);
 }
 
 function getMeme(name) {
-const RAPIDAPI_API_URL = `https://ronreiter-meme-generator.p.rapidapi.com/meme?font=Impact&font_size=40&meme=Frowning-Nun&top=${name}%20my%20kid&bottom=you%20shouldn't%20talk%20to%20strangers%20`
+const RAPIDAPI_API_URL = `https://ronreiter-meme-generator.p.rapidapi.com/meme?font=Impact&font_size=40&meme=Frowning-Nun&top=${name},%20my%20child&bottom=you%20shouldn't%20talk%20to%20strangers%20`
 const RAPIDAPI_REQUEST_HEADERS = {
     "x-rapidapi-host": "ronreiter-meme-generator.p.rapidapi.com",
     "x-rapidapi-key": "21f018dfadmsh8349df3502dc2c3p12164djsn3a44e957406d" ,
